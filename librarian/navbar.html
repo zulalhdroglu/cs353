@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html>
     <head>
@@ -10,7 +9,11 @@
         <nav>
             <ul> 
             <li><a href="/" class="here">Home</a></li>
-            <li><a href="/addUser.php" >Add User</a></li>      
+            <li><a href="#" aria-haspopup="true">Add User</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href = "/librarian/addStudent.php">Student</a></li>
+                <li><a href = "/addInstructor.php">Instructor</a></li>
+            </ul>   
             <li><a href="/services.html" >Add Library Item</a></li>          
             <li><a href="/contact.html" >Contact Us</a></li>
             <li><a href="/contact.html" >Profile</a></li>
