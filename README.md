@@ -1,1 +1,31 @@
 # cs353
+
+CREATE TABLE USER(user_id INT PRIMARY KEY AUTO_INCREMENT,username VARCHAR(32) NOT NULL UNIQUE,email VARCHAR(32) NOT NULL UNIQUE,password VARCHAR(32) NOT NULL, phone_no  VARCHAR(32) NOT NULL);
+CREATE TABLE student(
+             	user_id INT PRIMARY KEY,
+             	FOREIGN KEY(user_id) REFERENCES User(user_id)
+                                  ON DELETE CASCADE
+                                  ON UPDATE CASCADE,
+				warningCount INT DEFAULT NULL,
+              	department VARCHAR(32) NOT NULL,
+              	CGPA INT DEFAULT NULL
+);
+CREATE TABLE librarian(
+             	user_id INT PRIMARY KEY,
+             	FOREIGN KEY(user_id) REFERENCES User(user_id)
+                                  ON DELETE CASCADE
+                                  ON UPDATE CASCADE,
+              	salary INT DEFAULT NULL,
+              	insuranceType VARCHAR(32) NOT NULL
+);
+
+CREATE TABLE instructor(
+             	user_id INT PRIMARY KEY,
+             	FOREIGN KEY(user_id) REFERENCES User(user_id)
+                                  ON DELETE CASCADE
+                                  ON UPDATE CASCADE,
+              	department VARCHAR(32) NOT NULL,
+              	office VARCHAR(32) NOT NULL,
+              	salary INT DEFAULT NULL,
+				fax VARCHAR(32) NOT NULL
+);
