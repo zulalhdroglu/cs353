@@ -30,7 +30,6 @@
         </form>
     </div id='register'>
     </body>
-
     <script>
     $(function(){
     $("#nav-placeholder").load("navbar.html");
