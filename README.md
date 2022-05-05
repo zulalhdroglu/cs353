@@ -29,3 +29,6 @@ CREATE TABLE instructor(
               	salary INT DEFAULT NULL,
 				fax VARCHAR(32) NOT NULL
 );
+
+insert into user (user_id , username, email, password, phone_no)values(9,"guliny", "guliny@bilkent.com", "Gulin123", "05357776021");
+
