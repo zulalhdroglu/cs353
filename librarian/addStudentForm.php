@@ -11,7 +11,7 @@
     <body>
     <h1>ADD STUDENT TO SYSTEM</h1>
     <div id='register'>
-    <form method='post' onsubmit='return validateForm();' action='addStudenttoSystem.php'>
+    <form method='post' onsubmit='return validateForm();' action='addStudentToSystem.php'>
         User Name:<br>
         <input type='text' id='usernameInput' name='username' required><br>
         Email:<br>
