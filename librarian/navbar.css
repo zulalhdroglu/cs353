@@ -1,0 +1,99 @@
+
+body {
+    height: 125vh;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+}
+
+header {
+    background-color: rgb(163, 159, 159);
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+nav{
+    margin:0px;
+    display: flex;
+    align-items: center;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: black;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+  }
+  
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  
+  li {
+    color: rgb(1, 1, 1);
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+    
+  li a {
+    color: rgb(4, 4, 4);
+  }
+  
+  li:hover,
+  li:focus-within {
+    background: rgb(116, 115, 115);
+    cursor: pointer;
+  }
+  
+  li:focus-within a {
+    outline: none;
+  }
+  
+  ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+    background-color: rgb(163, 159, 159);
+     visibility: visible;
+     opacity: 1;
+     display: inline;
+  }
+  
+  ul li ul li {
+    clear: both;
+    width:auto;
+  }
+
