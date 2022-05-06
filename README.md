@@ -34,3 +34,5 @@ insert into user (user_id , username, email, password, phone_no)values(9,"guliny
 
 CREATE TABLE LibraryItem(item_id INT PRIMARY KEY, title VARCHAR(32) NOT NULL, genre VARCHAR(32) NOT NULL, itemState VARCHAR(32) NOT NULL); 
 
+CREATE TABLE Book(item_id INT PRIMARY KEY NOT NULL, author VARCHAR(32) NOT NULL, p_year VARCHAR(4) NOT NULL); 
+
