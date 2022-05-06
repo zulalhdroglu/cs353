@@ -29,13 +29,12 @@ if ($data['count'] > 0) {
     $result3 = $conn ->query($query3) or  die('Error in query: ' . $conn->error);
     $data3 = $result3->fetch_assoc();
 
-    if($data3['count'] > 0 ){
-        header('Location: student/student.php');
-    }
-    else if ($data['count'] > 0) {
+    if ($data['count'] > 0) {
     header('Location: librarian/librarian.php');
     }
-    
+    else if($data3['count'] > 0 ){
+        header('Location: student/student.php');
+    }
 } else {
     echo '<script>alert("Login failed, wrong credentials.");';
     echo 'document.location = "index.php";</script>';
