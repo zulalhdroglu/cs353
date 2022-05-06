@@ -32,3 +32,5 @@ CREATE TABLE instructor(
 
 insert into user (user_id , username, email, password, phone_no)values(9,"guliny", "guliny@bilkent.com", "Gulin123", "05357776021");
 
+CREATE TABLE LibraryItem(item_id INT PRIMARY KEY, title VARCHAR(32) NOT NULL, genre VARCHAR(32) NOT NULL, itemState VARCHAR(32) NOT NULL); 
+
