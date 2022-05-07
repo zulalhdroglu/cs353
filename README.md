@@ -36,3 +36,16 @@ CREATE TABLE LibraryItem(item_id INT PRIMARY KEY, title VARCHAR(32) NOT NULL, ge
 
 CREATE TABLE book( item_id INT PRIMARY KEY, FOREIGN KEY(item_id) REFERENCES libraryitem(item_id) ON DELETE CASCADE ON UPDATE CASCADE, author VARCHAR(256) NOT NULL, p_year VARCHAR(4) NOT NULL );
 
+CREATE TABLE  Borrow(
+                               	librarian_id INT NOT NULL,
+                               	item_id INT NOT NULL,
+                                student_id INT NOT NULL,
+                               	date VARCHAR(16) NOT NULL,
+                               	PRIMARY KEY(item_id),
+								FOREIGN KEY (librarian_id) REFERENCES Librarian(user_id)
+                               	ON DELETE CASCADE ON UPDATE CASCADE,
+                               	FOREIGN KEY (student_id) REFERENCES Student(user_id)
+								ON DELETE CASCADE ON UPDATE CASCADE,
+								FOREIGN KEY (item_id) REFERENCES LibraryItem(item_id)
+                               	ON DELETE CASCADE ON UPDATE CASCADE	);
+
