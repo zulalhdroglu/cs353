@@ -49,9 +49,6 @@
          tr:hover {
              background-color: #0c0d0d16;
          }
-         .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-          }
+         .action_btn {
+             width: 500px;
+             margin-left: 10%;}
