@@ -17,7 +17,7 @@ $query= "UPDATE libraryitem SET itemState = 'returned' where item_id = $i_id ";
 $result = $conn->query($query);
 
 if($resultReturn && $result){
-    echo "<script>alert('Book is released');</script>";
+    echo "<script>alert('Item is released');</script>";
     echo '<script>document.location = "s_searchBooks.php";</script>';
 }
 else{

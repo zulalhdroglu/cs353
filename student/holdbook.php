@@ -16,12 +16,12 @@ $queryUpdate = "UPDATE libraryitem SET itemState = 'onHold' where item_id = $i_i
 $resultUpdate = $conn->query($queryUpdate);
 
 if($resultHolds && $resultUpdate){
-    echo "<script>alert('Book put on hold');</script>";
-    echo '<script>document.location = "s_searchBooks.php";</script>';
+    echo "<script>alert('Item put on hold');</script>";
+    echo '<script>document.location = "s_profile.php";</script>';
 }
 else{
     echo "<script>alert('Try Again Later!!!');</script>";
-    echo '<script>document.location = "s_searchBooks.php";</script>';
+    echo '<script>document.location = "s_profile.php";</script>';
 }
   
 ?>

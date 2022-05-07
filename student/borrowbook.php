@@ -17,7 +17,7 @@ $query3= "UPDATE libraryitem SET itemState = 'borrowed' where item_id = $i_id ";
 $result3 = $conn->query($query3);
 
 if($resultInsert && $result3){
-    echo "<script>alert('Book is borrowed');</script>";
+    echo "<script>alert('Item is borrowed');</script>";
     echo '<script>document.location = "s_searchBooks.php";</script>';
 }
 else{
