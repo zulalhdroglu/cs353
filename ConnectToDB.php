@@ -1,7 +1,7 @@
 <?php
 define('SERVER', "localhost");
 define("USER","root");
-define("PASS","Playstation2001");
+define("PASS","WOIs8XDo");
 define("NAME", "school_library");
 class ConnectToDB {
     public static function getConnection() {
