@@ -19,10 +19,12 @@ $query2 = "SELECT user_id
            FROM user 
            WHERE email = '$email' ";
 $result2 = $conn->query($query2) or die('Error in query: ' . $conn->error);
-$user_id = $result2->fetch_assoc();
+$row = $result2->fetch_assoc();
+$user_id = $row["user_id"];
 
 $query3 = "INSERT INTO student(user_id, warningCount, department, CGPA) values($user_id, $warningCount, '$department', $cgpa)";
 $result3 = $conn->query($query3) or die('Error in query: ' . $conn->error);
-header('Location: librarian/addStudentForm.php');
+    echo "<script>alert('Student Successfully Added To The System');</script>";
+    header('Location:addStudentForm.php');
 $conn->close();
 ?>
