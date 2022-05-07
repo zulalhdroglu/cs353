@@ -54,8 +54,17 @@ CREATE TABLE Movie(
                     	item_id INT NOT NULL,
                     	duration VARCHAR(16) NOT NULL,
                     	director_name VARCHAR(256) NOT NULL,
-                    	PRIMARY KEY (item_id)
-) 
+                    	PRIMARY KEY (item_id),
+                        FOREIGN KEY (item_id) REFERENCES LibraryItem(item_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
+
+
+
+
+
 
 
 insert into libraryitem (item_id , title, genre, itemState)values(777,"your name", "romance", "returned");
