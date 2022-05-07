@@ -33,7 +33,7 @@ $query = "SELECT title, item_id, author, p_year
 $result = $conn->query($query) or die('Error in query: ' . $conn->error);
 
 $table = '<table>';
-$table .= '<tr> <th>Author</th><th>Year </th> <th>Title</th>';
+$table .= '<tr> <th>Author</th><th>Year </th> <th>Title</th>  <th>Borrow Book</th><th>Hold Book</th>';
 $count = mysqli_num_rows($result);
 
 
