@@ -58,17 +58,13 @@ CREATE TABLE Movie(
                         FOREIGN KEY (item_id) REFERENCES LibraryItem(item_id) ON DELETE CASCADE ON UPDATE CASCADE  
 );  
 
-  
-
-  
-
-
-
-
-
-
 insert into libraryitem (item_id , title, genre, itemState)values(777,"your name", "romance", "returned");  
 insert into movie (item_id , duration, director_name)values(777,"02:30", "Makoto Shinkai");  
+
+CREATE TABLE MultiMediaRoom (
+			mm_number INT PRIMARY KEY,
+           	availability VARCHAR(8) NOT NULL
+);
 
 
 
