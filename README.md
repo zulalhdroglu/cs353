@@ -63,7 +63,7 @@ insert into movie (item_id , duration, director_name)values(777,"02:30", "Makoto
 
 CREATE TABLE MultiMediaRoom (
 			mm_number INT PRIMARY KEY,
-           	availability VARCHAR(8) NOT NULL
+           	availability VARCHAR(32) NOT NULL
 );
 
 
