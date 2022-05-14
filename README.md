@@ -65,6 +65,7 @@ CREATE TABLE MultiMediaRoom (
 			mm_number INT PRIMARY KEY,
            	availability VARCHAR(32) NOT NULL
 );
+insert into multimediaroom (mm_number , availability)values(44,"available");
 
 
 
