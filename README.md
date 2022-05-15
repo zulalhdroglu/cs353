@@ -97,6 +97,16 @@ insert into instructor(user_id , department, office, salary, fax)values(30,"Phys
                     	PRIMARY KEY (assignment_id)
 );
 
+CREATE TABLE contain(
+					item_id INT NOT NULL,
+					assignment_id INT NOT NULL,
+					PRIMARY KEY(item_id,assignment_id),
+					FOREIGN KEY (item_id) REFERENCES LibraryItem(item_id)
+					ON DELETE CASCADE ON UPDATE CASCADE,
+					FOREIGN KEY (assignment_id) REFERENCES AssignmentItem(assignment_id)
+					ON DELETE CASCADE ON UPDATE CASCADE
+        	);
+
 
 
 
