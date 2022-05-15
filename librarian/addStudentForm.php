@@ -18,8 +18,8 @@
         <input type='text' id='emailInput' name='email' required><br>
         Password:<br>
         <input type='text' id='passwordInput' name='password' required><br>
-        Phone No :<br>
-        <input type='number' id='phoneInput' name='phone' required><br>
+        <label for = "phone">Phone No :</label><br>
+        <input type='tel' id='phoneInput' name='phone' placeholder="5xxxxxxxxx" pattern = "[5]{1}[0-9]{2}[0-9]{7}" required><br>
         Warning Count :<br>
         <input type='number' id='warningInput' name='warning' required min= '0' max ="3"><br>
         Department:<br>
