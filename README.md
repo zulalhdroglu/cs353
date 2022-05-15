@@ -84,6 +84,13 @@ insert into user (user_id , username, email, password, phone_no)values(30,"Alber
 
 insert into instructor(user_id , department, office, salary, fax)values(30,"Physics", "G-101", "50000", "albertE");
 
+	CREATE TABLE assignmentitem(
+                    	assignment_id INT NOT NULL,
+                    	review VARCHAR(1024) NOT NULL,
+                    	date VARCHAR(16) NOT NULL,
+                    	PRIMARY KEY (assignment_id)
+);
+
 
 
 
