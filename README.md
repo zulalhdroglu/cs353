@@ -120,7 +120,15 @@ CREATE TABLE assign (
 					ON DELETE CASCADE ON UPDATE CASCADE
 ) 
 
-
+CREATE TABLE Book(
+                    	item_id INT NOT NULL,
+                    	author VARCHAR(256) NOT NULL,
+                    	p_year VARCHAR(4) NOT NULL,
+                    	PRIMARY KEY (item_id),
+                        FOREIGN KEY (`item_id`) REFERENCES `libraryItem` (`item_id`) 
+                        ON DELETE CASCADE 
+                        ON UPDATE CASCADE
+) ENGINE=InnoDb;
 
 
 
