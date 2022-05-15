@@ -29,11 +29,20 @@ if ($data['count'] > 0) {
     $result3 = $conn ->query($query3) or  die('Error in query: ' . $conn->error);
     $data3 = $result3->fetch_assoc();
 
+    $query4 = "SELECT COUNT(*) AS count 
+               FROM instructor
+               WHERE user_id = $userId ";
+    $result4 = $conn ->query($query4) or  die('Error in query: ' . $conn->error);
+    $data4 = $result4->fetch_assoc();
+
     if ($data['count'] > 0) {
     header('Location: librarian/librarian.php');
     }
     else if($data3['count'] > 0 ){
         header('Location: student/student.php');
+    }
+    else if($data4['count'] > 0 ){
+        header('Location: instructor/instructor.php');
     }
 } else {
     echo '<script>alert("Login failed, wrong credentials.");';
