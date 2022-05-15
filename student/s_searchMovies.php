@@ -1,3 +1,10 @@
+<?php
+require 'ConnectToDB.php';
+$conn = ConnectToDB::getConnection();
+
+session_start();
+$sid = $_SESSION['user_id'];
+?>
 <html>
     <head>
     <script src="//code.jquery.com/jquery.min.js"></script>
@@ -14,11 +21,7 @@ $(function(){
 <style><?php include 'design.css'; ?></style>
 
 <?php
-require 'ConnectToDB.php';
-$conn = ConnectToDB::getConnection();
 
-session_start();
-$sid = $_SESSION['user_id'];
 
 echo '<h1> MOVIES  </h1>';
 
@@ -48,8 +51,8 @@ while ($row = $result->fetch_assoc()) {
     $did = $row['genre'];
     $table .= '<td>' . $did . '</td>';
     $iid = $row['item_id'];
-    $table .= '<td>' . "<a href='borrowbook.php?i_id=$iid' ><button type ='submit'>Borrow</button></a>";
-    $table .= '<td>' . "<a href='holdbook.php?i_id=$iid'><button type ='submit'>Hold</button></a>";
+    $table .= '<td>' . "<a href='borrowbook.php?i_id=$iid' ><button type ='submit'  class = 'button0'>Borrow</button></a>";
+    $table .= '<td>' . "<a href='holdbook.php?i_id=$iid'><button type ='submit'  class = 'button1'>Hold</button></a>";
     $table .= '</td> </tr>';
 }
 $table .= '</table>';

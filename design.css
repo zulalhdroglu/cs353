@@ -5,6 +5,36 @@
             text-align: center;
             color: #6a0020cf
          }
+         .button0 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #7cfc00;
+            border-radius: 3px;
+            outline: none;
+          }
+          .button1 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #a6e7ff;
+            border-radius: 3px;
+            outline: none;
+          }
+          .button2 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #008b8b;
+            border-radius: 3px;
+            outline: none;
+          }
           input {
               width: 200px;
               margin-bottom: 10px;
@@ -55,3 +85,4 @@
             margin-right: auto;
             width: 50%;
           }
+          

@@ -1,6 +1,16 @@
+
+
+<?php
+require 'ConnectToDB.php';
+$conn = ConnectToDB::getConnection();
+
+session_start();
+$sid = $_SESSION['user_id'];
+?>
 <html>
     <head>
     <script src="//code.jquery.com/jquery.min.js"></script>
+    
     </head>
     <div id="nav-placeholder">
     </div>
@@ -11,18 +21,13 @@ $(function(){
 });
 </script>
 
-<style><?php include 'design.css'; ?></style>
+<style>
 
+<?php include 'design.css'; ?></style>
 <?php
-require 'ConnectToDB.php';
-$conn = ConnectToDB::getConnection();
 
-session_start();
-$sid = $_SESSION['user_id'];
 
 echo '<h1> BOOKS  </h1>';
-
-
 
 $query = "SELECT title, item_id, author, p_year
           FROM libraryitem NATURAL JOIN book
@@ -46,8 +51,8 @@ while ($row = $result->fetch_assoc()) {
     $tid = $row['title'];
     $table .= '<td>' . $tid . '</td>';
     $iid = $row['item_id'];
-    $table .= '<td>' . "<a href='borrowbook.php?i_id=$iid' ><button type ='submit'>Borrow</button></a>";
-    $table .= '<td>' . "<a href='holdbook.php?i_id=$iid'><button type ='submit'>Hold</button></a>";
+    $table .= '<td>' . "<a href='borrowbook.php?i_id=$iid' ><button type ='submit' class = 'button0' >Borrow</button1></a>";
+    $table .= '<td>' . "<a href='holdbook.php?i_id=$iid'><button type ='submit'  class = 'button1'>Hold</button1></a>";
     $table .= '</td> </tr>';
 }
 $table .= '</table>';

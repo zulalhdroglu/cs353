@@ -5,6 +5,73 @@
             text-align: center;
             color: #6a0020cf
          }
+         .button0 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #baffc9 ;
+            border-radius: 3px;
+            outline: none;
+          }
+          .button1 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #bae1ff ;
+            border-radius: 3px;
+            outline: none;
+          }
+          .button2 {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #008b8b;
+            border-radius: 3px;
+            outline: none;
+          }
+          .buttonret {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ff6961  ;
+            border-radius: 3px;
+            outline: none;
+          }
+          .buttonrel {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ef7771   ;
+            border-radius: 3px;
+            outline: none;
+          }
+          button.disabled{
+            pointer-events: none;
+          }
+          .buttondis {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #909090  ;
+            pointer-events: none;
+            border-radius: 3px;
+            outline: none;
+          }
+
+         
+
           input {
               width: 200px;
               margin-bottom: 10px;
@@ -24,6 +91,7 @@
          h1 
          {
              font-size: 40px;
+             color: #DDA0DD ;
          }
          table {
              border-collapse: collapse;
@@ -40,9 +108,18 @@
              padding: 8px;
          }
          th {
-             background-color: #bd0e68;
+             background-color: #ffb3ba  ;
              color: white;
          }
+         .td2, .th2 {
+            border: 1px solid ;
+            text-align: left;
+            padding: 8px;
+        }
+        .th2 {
+            background-color: #a483dc ;
+            color: white;
+        }
          tr:nth-child(odd) {
              background-color: #bd0e6822;
          }
@@ -52,3 +129,5 @@
          .action_btn {
              width: 500px;
              margin-left: 10%;}
+
+    

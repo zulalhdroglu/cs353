@@ -23,12 +23,28 @@ $row = $result->fetch_assoc()
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <h1> My Profile  </h1>
+
+    <div class="card">
+    <img src="profile.png" alt="John" style="width:10%" class="center">
+ <div> 
+  <h7> <b>username:</b> <?php echo $row['username']; ?> </h1>
+  </div>
+  <div> 
+  <h7> <b>email:</b> <?php echo $row['email']; ?></h1>
+  </div>
+  <div> 
+  <h7> <b>id:</b> <?php echo $row['user_id']; ?> </h1>
+  </div>
+ 
+</div>
 
     
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style type="text/css">
+        
         body {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -38,6 +54,21 @@ $row = $result->fetch_assoc()
             text-align: center;
             color: #017572;
          }
+
+         .container{
+             display: flex;
+             align-content: center;
+             justify-content: center;
+         }
+
+          .container div{
+             display: flex;
+             align-items: center;
+             margin: 20px;
+             width: 100%;
+         }
+
+         
     </style>
 </head>
 <body>
@@ -62,27 +93,13 @@ $(function(){
 
 
     </style>
-        <h2 class="welcome_text" > My Profile </h2>
-     
-    
 
 
-<div class="card">
-<img src="profile.png" alt="John" style="width:10%" class="center">
- <div> 
-  <h7> <b>username:</b> <?php echo $row['username']; ?> </h1>
-  </div>
-  <div> 
-  <h7> <b>email:</b> <?php echo $row['email']; ?></h1>
-  </div>
-  <div> 
-  <h7> <b>id:</b> <?php echo $row['user_id']; ?> </h1>
-  </div>
- 
-</div>
 
-<div class="container" style="display: flex;">
-<div style="width: 50%;">
+<div id="container">
+
+
+<div id="left">
 <?php
 $queryBorrowed = "SELECT title , item_id
                   FROM borrow NATURAL JOIN libraryitem
@@ -96,6 +113,13 @@ $queryHolded   = "SELECT title , item_id
 
 $resultHolded = $conn->query($queryHolded) or die('Error in query: ' . $conn->error);
 
+$queryRented   = "SELECT mm_number
+                  FROM uses
+                  WHERE s_id = $sid";
+
+$resultRented = $conn->query($queryRented) or die('Error in query: ' . $conn->error);
+
+
 $table1 = '<table>';
 $table1 .= '<tr> <th>Borrowed Items</th><th>Return Borrowed Item </th>';
 //<th>Holded Items </th><th>Return Holded Items </th>
@@ -107,15 +131,17 @@ while ($row = $resultBorrowed->fetch_assoc()) {
     $bid = $row['title'];
     $table1 .= '<td>' . $bid . '</td>';
     $iid = $row['item_id'];
-    $table1 .= '<td>' . "<a href='returnItems.php?i_id=$iid' ><button type ='submit'>Return</button></a>";
+    $table1 .= '<td>' . "<a href='returnItems.php?i_id=$iid' ><button type ='submit' class = 'buttonret'>Return</button></a>";
     $table1 .= '</td> </tr>';
 }
+
 $table1 .= '</table>';
 echo $table1;
 ?>
 </div>
 
-<div style="flex-grow: 1;">
+
+<div id="center">
 <?php
 $table2 = '<table>';
 $table2 .= '<tr> <th>Holded Items </th><th>Return Holded Items </th>';
@@ -124,11 +150,27 @@ while ($row = $resultHolded->fetch_assoc()) {
     $bid = $row['title'];
     $table2 .= '<td>' . $bid . '</td>';
     $iid = $row['item_id'];
-    $table2 .= '<td>' . "<a href='releaseItems.php?i_id=$iid' ><button type ='submit'>Release</button></a>";
+    $table2 .= '<td>' . "<a href='releaseItems.php?i_id=$iid' ><button type ='submit' class = 'buttonrel'>Release</button></a>";
     $table2 .= '</td> </tr>';
 }
 $table2 .= '</table>';
 echo $table2;
+?>
+</div>
+
+<div id="right">
+<?php
+$table3 = '<table>';
+$table3 .= '<tr> <th>Rented Rooms </th><th>Leave Room </th>';
+while ($row = $resultRented->fetch_assoc()) {
+    $table3 .= '<tr>';
+    $rid = $row['mm_number'];
+    $table3 .= '<td>' . $rid . '</td>';
+    $table3 .= '<td>' . "<a href='leaveRoom.php?mm_number=$rid' ><button type ='submit' class = 'buttonrel'>Leave</button></a>";
+    $table3 .= '</td> </tr>';
+}
+$table3 .= '</table>';
+echo $table3;
 ?>
 </div>
         
