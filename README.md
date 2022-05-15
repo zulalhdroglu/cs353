@@ -73,6 +73,12 @@ CREATE TABLE uses  ( mm_number INT PRIMARY KEY NOT NULL,
 				  ON DELETE CASCADE ON UPDATE CASCADE,
 				  FOREIGN KEY(s_id) REFERENCES student(user_id)
 				  ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE LibraryItem(
+             	item_id INT PRIMARY KEY auto_increment,
+             	title VARCHAR(32) NOT NULL,
+             	genre VARCHAR(32) NOT NULL,
+                   itemState VARCHAR(32) NOT NULL
+);
 				  
 update multimediaroom
 set availability = 'notAvailable'
