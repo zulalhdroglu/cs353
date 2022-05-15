@@ -46,7 +46,7 @@ if (isset($_POST['userType']))  {
                     $table1 .= '<td>' . $row['email'] . '</td>';
                     $table1 .= '<td>' . $row['department'] . '</td>';
                     $table1 .= '<td>' . $row['warningCount'] . '</td>';
-                    $table1 .= '<td>' . "<a href='submit.php?aid=$user_id'><button>View</button></a>";
+                    $table1 .= '<td>' . "<a href='viewProfile.php?user_id=$user_id'><button>View</button></a>";
                     $table1 .= '</td> </tr>';
                 }
                 $table1 .= '</table>';
@@ -68,7 +68,7 @@ if (isset($_POST['userType']))  {
                 $table1 .= '<td>' . $row['username'] . '</td>';
                 $table1 .= '<td>' . $row['email'] . '</td>';
                 $table1 .= '<td>' . $row['department'] . '</td>';
-                $table1 .= '<td>' . "<a href='submit.php?aid=$user_id'><button>View</button></a>";
+                $table1 .= '<td>' . "<a href='viewProfile.php?user_id=$user_id'><button>View</button></a>";
                 $table1 .= '</td> </tr>';
             }
             $table1 .= '</table>';
