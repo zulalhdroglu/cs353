@@ -106,6 +106,19 @@ CREATE TABLE contain(
 					FOREIGN KEY (assignment_id) REFERENCES AssignmentItem(assignment_id)
 					ON DELETE CASCADE ON UPDATE CASCADE
         	);
+		
+CREATE TABLE assign (
+					student_id INT  NOT NULL,
+					instructor_id INT  NOT NULL,
+					assignment_id INT NOT NULL,
+					PRIMARY KEY (student_id, instructor_id, assignment_id),
+					FOREIGN KEY (assignment_id) REFERENCES AssignmentItem(assignment_id)
+                   	ON DELETE CASCADE ON UPDATE CASCADE,
+					FOREIGN KEY (student_id) REFERENCES Student(user_id)
+					ON DELETE CASCADE ON UPDATE CASCADE,
+					FOREIGN KEY (instructor_id) REFERENCES Instructor(user_id)
+					ON DELETE CASCADE ON UPDATE CASCADE
+) 
 
 
 
