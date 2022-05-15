@@ -73,6 +73,10 @@ CREATE TABLE uses  ( mm_number INT PRIMARY KEY NOT NULL,
 				  ON DELETE CASCADE ON UPDATE CASCADE,
 				  FOREIGN KEY(s_id) REFERENCES student(user_id)
 				  ON DELETE CASCADE ON UPDATE CASCADE);
+				  
+update multimediaroom
+set availability = 'notAvailable'
+where mm_number = 44
 
 
 
