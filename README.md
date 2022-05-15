@@ -78,6 +78,7 @@ update multimediaroom
 set availability = 'notAvailable'
 where mm_number = 44
 
+insert into user (user_id , username, email, password, phone_no)values(31,"Albert Einstein", "albert@gmail.com", "ihategermany", "05676543412");
 
 
 
