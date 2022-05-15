@@ -98,3 +98,4 @@ insert into instructor(user_id , department, office, salary, fax)values(30,"Phys
 
 
 
+
