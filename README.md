@@ -67,6 +67,13 @@ CREATE TABLE MultiMediaRoom (
 );
 insert into multimediaroom (mm_number , availability)values(44,"available");
 
+CREATE TABLE uses  ( mm_number INT PRIMARY KEY NOT NULL,
+				  s_id INT NOT NULL,
+				  FOREIGN KEY(mm_number) REFERENCES multimediaroom(mm_number)
+				  ON DELETE CASCADE ON UPDATE CASCADE,
+				  FOREIGN KEY(s_id) REFERENCES student(user_id)
+				  ON DELETE CASCADE ON UPDATE CASCADE);
+
 
 
 
