@@ -78,7 +78,11 @@ update multimediaroom
 set availability = 'notAvailable'
 where mm_number = 44
 
+//ZÜLAL BURDAN KOPYALA
+
 insert into user (user_id , username, email, password, phone_no)values(30,"AlbertEinstein", "einstein@gmail.com", "ihategermany", "05676543412");
+
+insert into instructor(user_id , department, office, salary, fax)values(30,"Physics", "G-101", "50000", "albertE");
 
 
 
