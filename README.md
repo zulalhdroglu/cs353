@@ -131,6 +131,15 @@ CREATE TABLE Book(
 ) ENGINE=InnoDb;
 
 
+CREATE TABLE Movie(
+                    	item_id INT NOT NULL,
+                    	duration VARCHAR(16) NOT NULL,
+                    	director_name VARCHAR(256) NOT NULL,
+                    	PRIMARY KEY (item_id),
+                        FOREIGN KEY (`item_id`) REFERENCES `libraryitem` (`item_id`)
+                        ON DELETE CASCADE 
+                        ON UPDATE CASCADE
+) ENGINE=InnoDb;
 
 
 
