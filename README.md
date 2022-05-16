@@ -141,10 +141,16 @@ CREATE TABLE Movie(
                         ON UPDATE CASCADE
 ) ENGINE=InnoDb;
 
-create view returned_movies AS
+create view returned_books AS
           SELECT title, item_id, author, p_year
           FROM libraryitem NATURAL JOIN book
           WHERE itemState = 'returned'
+	  
+	  
+create view all_movies AS 
+         SELECT title, item_id, director_name, duration, genre
+		 FROM libraryitem NATURAL JOIN movie
+		 WHERE itemState = 'returned'
 
 
 
