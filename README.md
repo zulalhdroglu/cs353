@@ -8,8 +8,8 @@ CREATE TABLE student(
                                   ON UPDATE CASCADE, 
 				warningCount INT DEFAULT NULL,  
               	department VARCHAR(32) NOT NULL, 
-              	CGPA INT DEFAULT NULL 
-);  
+              	CGPA INT DEFAULT NULL);  
+  
 CREATE TABLE librarian(  
              	user_id INT PRIMARY KEY,  
              	FOREIGN KEY(user_id) REFERENCES User(user_id)  
@@ -29,7 +29,7 @@ CREATE TABLE instructor(
               	salary INT DEFAULT NULL,  
 				fax VARCHAR(32) NOT NULL  
 );  
-  
+    
 insert into user (user_id , username, email, password, phone_no)values(9,"guliny", "guliny@bilkent.com", "Gulin123", "05357776021");  
   
 CREATE TABLE LibraryItem(item_id INT PRIMARY KEY, title VARCHAR(32) NOT NULL, genre VARCHAR(32) NOT NULL, itemState VARCHAR(32) NOT NULL);  
