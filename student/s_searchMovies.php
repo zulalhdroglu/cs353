@@ -11,7 +11,6 @@ $sid = $_SESSION['user_id'];
     </head>
     <div id="nav-placeholder">
     </div>
-
     <script>
 $(function(){
   $("#nav-placeholder").load("stubar.html");
@@ -24,9 +23,6 @@ $(function(){
 
 
 echo '<h1> MOVIES  </h1>';
-
-
-
 $query = "SELECT title, item_id, director_name, duration, genre
           FROM libraryitem NATURAL JOIN movie
           WHERE itemState = 'returned'

@@ -22,8 +22,8 @@ $item_id = $row["item_id"];
 
 $query3 = "INSERT INTO movie(item_id, duration, director_name) values($item_id, '$duration', '$director')";
 $result3 = $conn->query($query3) or die('Error in query: ' . $conn->error);
-header('Location:addBookForm.php');
 echo "<script>alert('Instructor Successfully Added To The System');</script>";
+echo '<script>document.location = "addMovieForm.php";</script>';
 
 $conn->close();
 ?>

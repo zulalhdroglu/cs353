@@ -6,7 +6,7 @@ $conn = ConnectToDB::getConnection();
 // Get the form variables
 $userId = strtolower($_POST['username']);
 $password = $_POST['password'];
-
+$_SESSION['userId'] = $userId;
 $query = "SELECT COUNT(*) AS count
           FROM user
           WHERE LOWER(user_id) = '$userId' AND password = '$password'";
