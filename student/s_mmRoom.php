@@ -16,7 +16,7 @@ $sid = $_SESSION['user_id'];
 
     <script>
 $(function(){
-  $("#nav-placeholder").load("stubar.html");
+  $("#nav-placeholder").load("stubar2.html");
 });
 </script>
 
@@ -31,21 +31,26 @@ $query = "SELECT mm_number, availability
           ";
 
 $result = $conn->query($query) or die('Error in query: ' . $conn->error);
-
+$result2 = $conn->query($query) or die('Error in query: ' . $conn->error);
+$row2 = $result2->fetch_assoc();
+$count2 = mysqli_num_rows($result2);
 $table = '<table>';
 $table .= '<tr> <th>Multimedia Rooms</th><th> Rent Room </th>';
-$count = mysqli_num_rows($result);
 
+$queryCheck = "SELECT mm_number, s_id
+FROM uses
+WHERE s_id = $sid
+
+";
+
+$resultCheck = $conn->query($queryCheck) or die('Error in query: ' . $conn->error);
+$rowCheck = $resultCheck->fetch_assoc();
+$count = mysqli_num_rows($resultCheck);
 
 if($count > 0){
 
-    $queryCheck = "SELECT mm_number, s_id
-              FROM uses
-              WHERE s_id = $sid
+   
     
-    ";
-    $resultCheck = $conn->query($queryCheck) or die('Error in query: ' . $conn->error);
-    $rowCheck = $resultCheck->fetch_assoc();
 
     echo "You can only rent 1 room at a time. ";
     echo "You already rented room ", $rowCheck['mm_number'], ".";
@@ -55,6 +60,7 @@ if($count > 0){
   }
 
 else{
+
 
 while ($row = $result->fetch_assoc()) {
   $table .= '<tr>';
@@ -73,9 +79,11 @@ while ($row = $result->fetch_assoc()) {
 $table .= '</table>';
 echo $table;
 
-if($count == 0){
+
+if($count2 == 0){
   echo "There is no available multi-media room in the library. Try again later...";
 }
+
   }
 
 

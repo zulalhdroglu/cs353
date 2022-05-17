@@ -70,9 +70,9 @@
              padding: 8px;
          }
          th {
-             background-color: #bd0e68;
-             color: white;
-         }
+            background-color: #ffb3ba  ;
+            color: white;
+        }
          tr:nth-child(odd) {
              background-color: #bd0e6822;
          }
@@ -84,5 +84,44 @@
             margin-left: auto;
             margin-right: auto;
             width: 50%;
+          }
+          .buttonret {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ff6961  ;
+            border-radius: 3px;
+            outline: none;
+          }
+          h1 
+          {
+              font-size: 40px;
+              color: #DDA0DD ;
+          }
+          .buttonrel {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ef7771   ;
+            border-radius: 3px;
+            outline: none;
+          }
+          button.disabled{
+            pointer-events: none;
+          }
+          .buttondis {
+            display: inline-block;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #909090  ;
+            pointer-events: none;
+            border-radius: 3px;
+            outline: none;
           }
           
