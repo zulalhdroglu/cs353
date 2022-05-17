@@ -28,6 +28,7 @@ session_start();
 $conn = ConnectToDB::getConnection();
 if (isset($_POST['userType']))  {
     $userType = $_POST["userType"];
+     $_SESSION['userType'] = $userType;
     switch ($userType) {
         case 'student':
                 $query = "SELECT student.user_id,user.username, user.email,student.department,student.warningCount

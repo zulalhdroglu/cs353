@@ -93,6 +93,8 @@ $queryRented = "SELECT mm_number
 $resultRented = $conn->query($queryRented) or die('Error in query: ' . $conn->error);
 
 
+
+
 $table1 = '<table>';
 $table1 .= '<tr> <th>Borrowed Items</th><th>Return Borrowed Item </th>';
 //<th>Holded Items </th><th>Return Holded Items </th>
@@ -129,5 +131,33 @@ $table3 .= '</table>';
 echo $table3;
 ?>
 </div>
+
+<div>
+<?php
+$usertype = $_SESSION['userType'];
+if($usertype == 'student'){
+    $queryWarning = "SELECT user_id, warningCount
+                    FROM student
+                    WHERE user_id = $userid";
+    $queryWarning = $conn->query($queryWarning) or die('Error in query: ' . $conn->error);
+
+    $table4 = '<table>';
+    $table4 .= '<tr> <th>User ID</th><th>Warning Count </th>';
+    while ($row = $resultRented->fetch_assoc()) {
+        $table4 .= '<tr>';
+        $userid = $row['user_id'];
+        $table4 .= '<td>' . $rid . '</td>';
+        $table4 .= '<td>' . $row['user_id']. '</td>';
+        $table4 .= '</td> </tr>';
+    }
+    $table4 .= '</table>';
+    echo $table4;
+    echo "<div> <button type='submit'>Warn Student</button> </div>";
+}
+?>
+</div>
+
+
+
 </div>
 </html>
