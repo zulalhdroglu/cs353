@@ -1,5 +1,5 @@
 
-<style><?php include 'design.css'; ?></style>
+<style><?php include '../design.css'; ?></style>
 <?php
 require 'ConnectToDB.php';
 $conn = ConnectToDB::getConnection();

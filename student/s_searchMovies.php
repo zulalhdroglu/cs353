@@ -13,7 +13,7 @@ $sid = $_SESSION['user_id'];
     </div>
     <script>
 $(function(){
-  $("#nav-placeholder").load("stubar.html");
+  $("#nav-placeholder").load("stubar2.html");
 });
 </script>
 
@@ -23,9 +23,9 @@ $(function(){
 
 
 echo '<h1> MOVIES  </h1>';
-$query = "SELECT title, item_id, director_name, duration, genre
-          FROM libraryitem NATURAL JOIN movie
-          WHERE itemState = 'returned'
+
+$query = "SELECT *
+          FROM all_movies
           ";
 
 
