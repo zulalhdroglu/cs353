@@ -11,7 +11,6 @@ $sid = $_SESSION['user_id'];
     </head>
     <div id="nav-placeholder">
     </div>
-
     <script>
 $(function(){
   $("#nav-placeholder").load("stubar2.html");
@@ -24,8 +23,6 @@ $(function(){
 
 
 echo '<h1> MOVIES  </h1>';
-
-
 
 $query = "SELECT *
           FROM all_movies
