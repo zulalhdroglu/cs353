@@ -28,6 +28,8 @@ $(function(){
 
 echo '<h1> BOOKS  </h1>';
 
+
+
 $query = "SELECT *
           FROM returned_books
           ";

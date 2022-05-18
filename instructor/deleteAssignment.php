@@ -11,13 +11,17 @@ $query1 = "delete from assign
                 where student_id = $sid AND instructor_id = $iid AND assignment_id = $assignment_id
                 
                 ";
+
+/** 
 $query2 = "delete from contain
                 where item_id = $item_id AND assignment_id = $assignment_id";
 
-$result1 = $conn->query($query1);
-$result2 = $conn->query($query2);
+*/
 
-if($result1 && $result2){
+$result1 = $conn->query($query1);
+//$result2 = $conn->query($query2);
+
+if($result1 ){
     echo "<script>alert('Assignment is deleted.');</script>";
     echo '<script>document.location = "i_profile.php";</script>';
 }
