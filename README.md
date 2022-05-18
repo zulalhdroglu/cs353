@@ -154,4 +154,4 @@ create view all_movies AS
 
 
 
-
+CREATE TRIGGER contain_delete AFTER DELETE on assign FOR EACH ROW DELETE FROM contain     WHERE contain.assignment_id = old.assignment_id
