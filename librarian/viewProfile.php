@@ -152,12 +152,9 @@ if($usertype == 'student'){
     }
     $table4 .= '</table>';
     echo $table4;
-    echo "<div> <button type='submit'>Warn Student</button> </div>";
+    echo "<a href='warn.php?userid=$userid'><button>Warn Student</button></a>";
 }
 ?>
 </div>
-
-
-
 </div>
 </html>
