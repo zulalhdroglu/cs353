@@ -15,9 +15,10 @@ $data = $result->fetch_assoc();
 $numberOfWarnings = $data ["warningCount"];
 
 if ($numberOfWarnings >= 3 ) {
-    echo '<script>alert(Max Number Of Warning Count);';
+    echo "<script>alert('Max Warning Count');";
     echo "document.location.href='viewProfile.php?userid=$userid';</script>";
-}else{
+}
+else{
     $queryUpdate = "UPDATE student
                     SET warningCount = $numberOfWarnings +1
                     WHERE user_id =$userid";

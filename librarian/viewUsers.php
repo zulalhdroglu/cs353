@@ -1,4 +1,9 @@
 <style><?php include '../design.css'; ?></style>
+<?php
+require '../ConnectToDB.php';
+session_start();
+$conn = ConnectToDB::getConnection();
+?>
 <!doctype html>
 <html>
     <head>
@@ -23,9 +28,6 @@
 
     </form>
 <?php
-require '../ConnectToDB.php';
-session_start();
-$conn = ConnectToDB::getConnection();
 if (isset($_POST['userType']))  {
     $userType = $_POST["userType"];
      $_SESSION['userType'] = $userType;
